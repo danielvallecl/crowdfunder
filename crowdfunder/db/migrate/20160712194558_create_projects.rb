@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :goal
       t.datetime :deadline
 
-      t.integer :user_id
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps null: false
     end

@@ -3,7 +3,7 @@ class CreatePledges < ActiveRecord::Migration
     create_table :pledges do |t|
       t.integer :amount
 
-      t.integer :user_id
+      t.belongs_to :project, foreign_key: true
 
       t.timestamps null: false
     end

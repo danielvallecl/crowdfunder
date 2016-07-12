@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root "projects#index"             #In plural#
+
+  resources :projects          #Provides all the CRUD methods##
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

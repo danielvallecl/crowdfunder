@@ -3,7 +3,7 @@ class CreateRewards < ActiveRecord::Migration
     create_table :rewards do |t|
       t.text :description
 
-      t.integer :project_id
+      t.belongs_to :project, foreign_key: true
 
       t.timestamps null: false
     end
