@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Crowdfunder</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Crowdfunder</title>
+			<%= stylesheet_link_tag    "application" %>
+    	<%= javascript_include_tag "application" %>
+    	<%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <header>
+      <nav class="nav-bar">
+        <h1 class="title"><%= link_to "Crowdfunder", projects_path %></h1>
+        <ul class="nav-list">
+	        <% if current_user %>
+	      		<li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+	     		 	<li><%= link_to "Logout", :logout, method: :post %></li>
+	    		<% else %>
+	      		<li><%= link_to "Register", new_user_path %></li> |
+	      		<li><%= link_to "Login", :login %></li>
+	    		<% end %>
+        </ul>
+      </nav>
+    </header>
 
-</body>
+
+  <div id="nav">
+    
+  </div>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
+  <%= yield %>
+   <footer>
+     <p class="copyright">Copyright &copy; 2015</p>
+     <% if current_user %>
+       <p class="footer-item"><%= link_to 'Add New Project', new_project_path %></p>
+     <% else %>
+        <p class="footer-item"><font color = "40E0D0">Please</font> <%= link_to "log in", new_session_path %><font color = "40E0D0"> or</font> <%= link_to "Register", new_user_path %><font color = "40E0D0"> to add a new project.</font></p>
+     <% end %>
+   </footer>
+  </body>
 </html>
