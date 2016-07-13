@@ -5,5 +5,7 @@ Rails.application.routes.draw do
       resources :rewards
     end
 
+    resources :rewards
+
 
 end

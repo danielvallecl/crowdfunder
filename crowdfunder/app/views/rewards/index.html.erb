@@ -1,0 +1,11 @@
+<h1>All Rewards</h1>
+
+<ul>
+  <% @rewards.each do |reward| %>
+  <%= link_to reward.description, project_path(project) %>
+
+  <% end %>
+
+
+
+</ul>
