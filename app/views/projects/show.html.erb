@@ -13,7 +13,14 @@
 <br><%= link_to "Edit", edit_project_path(@project)%> 
 <%= link_to "Delete", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?"} %>
 
-
+<p>	<% total_pledges = 0 %>
+	<% @project.pledges.each do | pledge| %>
+	<% total_pledges += pledge.amount %>
+	<% end %>
+	<%= total_pledges %>
+/
+	<%= @project.goal %>
+</p>
 
 
 <%= form_tag project_pledges_path(@project) do %>
