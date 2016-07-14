@@ -1,8 +1,18 @@
 
-<div id="main-container" class="container">
   <div class="row">
-    
-    <div id="main-content" class="col-xs-9">
+
+    <div id="main-content" class="col-xs-6">
+      <h1>Recent Projects</h1>
+      <div class="jumbotron">
+        <h1>awesome</h1>
+        <% @projects.each do |project| %>
+          <p class="project-name"><strong><%= project.title %> : </strong></p>
+          <br><strong><%= project.goal %></strong>
+          <br><em><%= project.description %></em>
+        <% end %>
+      </div>
+    </div>
+    <div id="main-content" class="col-xs-6">
       <h1>Recent Projects</h1>
       <div class="jumbotron">
         <h1>awesome</h1>
@@ -14,4 +24,18 @@
       </div>
     </div>
   </div>
-</div>
+
+  <div class="row">
+
+    <div id="main-content" class="col-xs-12">
+      <h1>Recent Projects</h1>
+      <div class="jumbotron">
+        <h1>awesome</h1>
+        <% @projects.each do |project| %>
+          <p class="project-name"><strong><%= project.title %> : </strong></p>
+          <br><strong><%= project.goal %></strong>
+          <br><em><%= project.description %></em>
+        <% end %>
+      </div>
+    </div>
+  </div>
