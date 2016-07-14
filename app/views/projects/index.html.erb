@@ -1,7 +1,17 @@
-<h1>Recent Projects</h1>
 
-<% @projects.each do |project| %>
-	<p class="project-name"><strong><%= project.title %> : </strong></p>
-  <br><strong><%= project.goal %></strong>
-  <br><em><%= project.description %></em>
-<% end %>
+<div id="main-container" class="container">
+  <div class="row">
+    
+    <div id="main-content" class="col-xs-9">
+      <h1>Recent Projects</h1>
+      <div class="jumbotron">
+        <h1>awesome</h1>
+        <% @projects.each do |project| %>
+          <p class="project-name"><strong><%= project.title %> : </strong></p>
+          <br><strong><%= project.goal %></strong>
+          <br><em><%= project.description %></em>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
