@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 	load_and_authorize_resource
 	
 	def index
-    @projects = Project.all.order(created_at: :desc)
+    @projects = Project.all.order(start_date: :desc)
   end
 
   def show
@@ -47,6 +47,6 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :description, :goal, :start_date, :deadline, :url, :owner_id, :category_id)
+    params.require(:project).permit(:title, :description, :goal, :start_date, :deadline, :url, :owner_id, :category_id, rewards_attributes: [:description])
   end
 end

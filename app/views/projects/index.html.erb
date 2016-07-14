@@ -1,7 +1,12 @@
-<h1>Recent Projects</h1>
+<h1>Upcoming Projects</h1>
 
 <% @projects.each do |project| %>
 	<p class="project-name"><strong><%= project.title %> : </strong></p>
   <br><strong><%= project.goal %></strong>
   <br><em><%= project.description %></em>
+  <% project.rewards.each do |reward| %>
+  	<%= reward.description %>
+	<% end %>
+	<br> <%= link_to "View", project_path(project) %>
+
 <% end %>
