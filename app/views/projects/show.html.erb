@@ -7,3 +7,18 @@
 <p> <%= @project.goal %> </p>
 <p> <%= @project.start_date %> </p>
 <p> <%= @project.deadline %> </p>
+
+
+
+
+<%= form_tag project_pledges_path(@project) do %>
+ <div class="field">
+  <%= label_tag :amount %><br />
+  <%= text_field_tag :amount %>
+</div>
+
+<div class="actions">
+  <%= submit_tag "Pledge" %>
+</div>
+
+<% end %>
