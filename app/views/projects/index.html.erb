@@ -40,12 +40,12 @@
 
 
   <div class="row">
-
     <div id="main-content" class="col-xs-6">
       <h1>Recent Projects</h1>
       <div class="jumbotron">
         <h1>awesome</h1>
-        <% @projects.each do |project| %>
+        <% recently_created_projects = @projects.order(created_at: :desc) %>
+        <% recently_created_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
           <br><strong><%= project.goal %></strong>
           <br><em><%= project.description %></em>
@@ -53,10 +53,11 @@
       </div>
     </div>
     <div id="main-content" class="col-xs-6">
-      <h1>Recent Projects</h1>
+      <h1>Completed Projects</h1>
       <div class="jumbotron">
         <h1>awesome</h1>
-        <% @projects.each do |project| %>
+        <% recently_completed_projects = @projects.order(deadline: :asc) %>
+        <% recently_completed_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
           <br><strong><%= project.goal %></strong>
           <br><em><%= project.description %></em>
@@ -71,7 +72,8 @@
       <h1>Upcoming Projects</h1>
       <div class="jumbotron">
         <h1>awesome</h1>
-        <% @projects.each do |project| %>
+        <% upcoming_projects = @projects.order(start_date: :desc) %>
+        <% upcoming_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
           <br><strong><%= project.goal %></strong>
           <br><em><%= project.description %></em>

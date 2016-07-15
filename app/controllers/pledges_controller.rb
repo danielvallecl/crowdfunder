@@ -5,7 +5,7 @@ class PledgesController < ApplicationController
   end
 
   def index
-    @pledges = Pledge.all.order(start_date: :desc)
+    @pledges = Pledge.all
   end
 
   def show
@@ -44,6 +44,6 @@ class PledgesController < ApplicationController
 
   private
   def pledge_params
-    params.require(:pledge).permit(:amount, :project_id)
+    params.permit(:amount, :project_id)
   end
 end

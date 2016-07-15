@@ -2,11 +2,12 @@ class ProjectsController < ApplicationController
 	load_and_authorize_resource
 	
 	def index
-    @projects = Project.all.order(start_date: :desc)
+    @projects = Project.all
   end
 
   def show
     @project = Project.find(params[:id])
+    @pledges = @project.pledges
   end
 
   def new
