@@ -68,8 +68,14 @@
         <% recently_completed_projects = @projects.order(deadline: :asc) %>
         <% recently_completed_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
-          <br><strong><%= project.goal %></strong>
+          <%= link_to image_tag(project.url, size: "112x112"), project_path(project)%>
+          <br><strong><% total_pledges = 0 %>
+            <% project.pledges.each do | pledge| %>
+            <% total_pledges += pledge.amount %>
+          <% end %>
+          <%= total_pledges %> / <%= project.goal %></strong>
           <br><em><%= project.description %></em>
+          <br> <%= link_to "View", project_path(project) %>
         <% end %>
       </div>
     </div>
@@ -80,8 +86,14 @@
         <% recently_created_projects = @projects.order(created_at: :asc) %>
         <% @projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
-          <br><strong><%= project.goal %></strong>
+          <%= link_to image_tag(project.url, size: "112x112"), project_path(project)%>
+          <br><strong><% total_pledges = 0 %>
+            <% project.pledges.each do | pledge| %>
+            <% total_pledges += pledge.amount %>
+          <% end %>
+          <%= total_pledges %> / <%= project.goal %></strong>
           <br><em><%= project.description %></em>
+          <br> <%= link_to "View", project_path(project) %>
         <% end %>
       </div>
     </div>
@@ -96,7 +108,12 @@
         <% upcoming_projects = @projects.order(start_date: :asc) %>
         <% upcoming_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
-          <br><strong><%= project.goal %></strong>
+          <%= link_to image_tag(project.url, size: "112x112"), project_path(project)%>
+          <br><strong><% total_pledges = 0 %>
+            <% project.pledges.each do | pledge| %>
+            <% total_pledges += pledge.amount %>
+          <% end %>
+          <%= total_pledges %> / <%= project.goal %></strong>
           <br><em><%= project.description %></em>
           <br><em><% project.rewards.each do |reward| %>
             <%= reward.description %></em>

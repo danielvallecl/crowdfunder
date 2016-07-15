@@ -3,6 +3,7 @@
 <h2>Project Details:</h2>
 
 <p> Title : <%= @project.title %> 
+  <br><%= image_tag(@project.url, size: "224x224") %>
   <br> Description : <%= @project.description %> 
   <br> Goal :  <%= @project.goal %>  
   <br> Start : <%= @project.start_date %> 
