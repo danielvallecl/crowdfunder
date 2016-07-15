@@ -10,7 +10,7 @@
 
     <header>
       <nav class="nav-bar">
-        <h1 class="title"><%= link_to "crowdfunder", projects_path %></h1>
+        <h1 id="logo"><%= link_to "crowdfunder", projects_path %></h1>
         <ul class="nav-list">
           <% if current_user %>
             <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
@@ -22,11 +22,6 @@
         </ul>
       </nav>
     </header>
-
-
-
-
-
 
   <div id="nav">
 
@@ -40,12 +35,10 @@
   </div>
 
    <footer>
-     <p class="copyright">Copyright &copy; 2015</p>
-     <% if current_user %>
-       <p class="footer-item"><%= link_to 'Add New Project', new_project_path %></p>
-     <% else %>
-        <p class="footer-item"><font color = "40E0D0">Please</font> <%= link_to "log in", new_session_path %><font color = "40E0D0"> or</font> <%= link_to "Register", new_user_path %><font color = "40E0D0"> to add a new project.</font></p>
-     <% end %>
+     <p class="copyright">Copyright &copy; 2016</p>
+     <div class="logo_bottom_container">
+      <%= link_to "crowdfunder", projects_path, id: "logo_bottom" %>
+     </div>
    </footer>
   </body>
 </html>
