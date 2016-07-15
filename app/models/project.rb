@@ -8,7 +8,7 @@ class Project < ApplicationRecord
   validate :future_project
 
   def future_project
-		the_date = self.date
+		the_date = self.start_date
 		if the_date < DateTime.now
 			errors.add(:date, ": Your project cannot occur in the past")
 		end
