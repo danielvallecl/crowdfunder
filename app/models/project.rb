@@ -18,7 +18,4 @@ class Project < ApplicationRecord
   	self.pledges.order(created_at: :desc)
   end
 
-  # def total_pledge_amount
-  # 	project.pledges.amount.reduce(:+)
-  # end
 end
