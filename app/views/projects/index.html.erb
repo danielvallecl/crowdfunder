@@ -91,7 +91,8 @@
       <h1>Upcoming Projects</h1>
       <div class="jumbotron">
         <h1>Project</h1>
-        <% @projects.each do |project| %>
+        <% upcoming_projects = @projects.order(start_date: :asc) %>
+        <% upcoming_projects.each do |project| %>
           <p class="project-name"><strong><%= project.title %> : </strong></p>
           <br><strong><%= project.goal %></strong>
           <br><em><%= project.description %></em>
