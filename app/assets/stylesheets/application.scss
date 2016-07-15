@@ -15,8 +15,14 @@ header a {
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none;
-  transition: 0.2 ease;
+  transition: 0.2s;
 }
+
+header a:hover {
+  color: orange;
+  text-decoration: none;
+}
+
 /* ========= Layout Body settings ====== */
 
 body {
@@ -70,7 +76,7 @@ body {
 
 footer {
   position: relative;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -104,15 +110,23 @@ footer p {
   -webkit-user-select: none;
 }
 
+#logo_bottom:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+#logo_bottom a:hover {
+  opacity: 1;
+}
+
 /*=============PROJECTS#INDEX===============*/
 
 .tagline {
   position: relative;
   text-align: center;
-  top: -30px;
+  top: -40px;
   padding: -10px;
   font-size: 25px;
-  top: -30px;
   color: #00a03e;
 }
 
@@ -136,7 +150,7 @@ footer p {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     font-family: "Roboto";
     color: white;
     transition: 0.2s;
@@ -144,9 +158,13 @@ footer p {
 
 .main_button:hover {
   background-color: orange;
-
+  text-decoration: none;
 }
 
 .main_button a {
   color: white;
+}
+
+.main_button a:hover {
+  text-decoration: none;
 }

@@ -1,5 +1,5 @@
 class Reward < ApplicationRecord
 	belongs_to :project
 
-	validate :description, presence: true
+	validates :description, presence: true
 end
